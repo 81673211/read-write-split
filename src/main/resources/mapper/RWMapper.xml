@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fred.rwsplit.RWMapper">
+    <resultMap id="resultMap" type="com.fred.rwsplit.domain.Stu">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+    </resultMap>
+<!--    <sql id="column_list">-->
+<!--    id, name-->
+<!--    </sql>-->
+
+    <select id="get" parameterType="java.lang.Integer" resultType="com.fred.rwsplit.domain.Stu">
+        select id, name as name from stu where id=#{id}
+    </select>
+
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true" >
+        insert into stu(name) values(#{stu.name})
+    </insert>
+</mapper>

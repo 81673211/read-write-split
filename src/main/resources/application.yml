@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    master:
+      jdbc-url: jdbc:mysql://192.168.56.10:3306/master-slave-test
+      username: root
+      password: admin
+      driver-class-name: com.mysql.jdbc.Driver
+    slave:
+      jdbc-url: jdbc:mysql://192.168.56.11:3306/master-slave-test
+      username: readuser   # 只读账户
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  type-aliases-package: com.fred.rwsplit.domain
+  mapper-locations: classpath:mapper/*Mapper.xml
+logging:
+  level:
+    root: info
