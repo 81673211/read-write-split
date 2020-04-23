@@ -20,6 +20,5 @@ public class RWService {
         final Stu stu = new Stu();
         stu.setName(name);
         rwMapper.insert(stu);
-        throw new RuntimeException();
     }
 }

@@ -38,10 +38,10 @@ public class DataSourceConfig {
         Map<Object, Object> targetDataSources = new HashMap<>();
         targetDataSources.put(DBTypeEnum.MASTER, masterDataSource);
         targetDataSources.put(DBTypeEnum.SLAVE, slaveDataSource);
-        DynamicDataSource myRoutingDataSource = new DynamicDataSource();
-        myRoutingDataSource.setDefaultTargetDataSource(masterDataSource);
-        myRoutingDataSource.setTargetDataSources(targetDataSources);
-        return myRoutingDataSource;
+        DynamicDataSource dynamicDataSource = new DynamicDataSource();
+        dynamicDataSource.setDefaultTargetDataSource(masterDataSource);
+        dynamicDataSource.setTargetDataSources(targetDataSources);
+        return dynamicDataSource;
     }
 
 }
